@@ -1,0 +1,24 @@
+
+
+.wrapper {
+    
+    display: grid;
+    grid-gap: 20px;
+    width: 90%;
+    grid-template-columns: 40px 40px 40px 40px;
+    grid-template-rows: 40px 40px 40px 40px;
+    
+}
+.descendant {
+    background-color: green;
+    height: 40px;
+    width: 40px;
+    padding: 5px;
+
+}
+.changedDescendant {
+    background-color: black;
+    height: 40px;
+    width: 40px;
+    padding: 5px;
+}
