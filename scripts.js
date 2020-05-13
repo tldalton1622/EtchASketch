@@ -1,9 +1,14 @@
 //const gridSize = 16
 let selectGrid = document.querySelector('#gridDivs');
 let selectBtn = document.querySelector('#button');
+let gridSize = 16
+
+
+
 
 var createGridFunction = (function () { 
-    for (let i=0; i < 16; i++) {
+     x = gridSize;
+    for (let i=0; i < x; i++) {
         
         var creatingElement = document.createElement('div')
         creatingElement.classList.add('descendant');
