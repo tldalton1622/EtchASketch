@@ -3,25 +3,21 @@
 .wrapper {
     
     display: grid;
-    grid-gap: .2em;
+    grid-gap: .1em;
     width: 40vw;
     height: 40vh;
-    grid-auto-rows: .2fr;
-    grid-template-columns: repeat(4, 1fr)
- 
+   
    
     
 }
-.descendant {
+.originalStyle {
     background-color: green;
     height: 1fr;
     width: 1fr;
-    padding: 5px;
 
 }
-.changedDescendant {
+.changedToBlack {
     background-color: black;
     height: 1fr;
     width: 1fr;
-    padding: 5px;
 }

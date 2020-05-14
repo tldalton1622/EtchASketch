@@ -1,40 +1,32 @@
-//const gridSize = 16
-let selectGrid = document.querySelector('#gridDivs');
-let selectBtn = document.querySelector('#button');
-let gridSize = 16
+const gridDivs = document.getElementById('grid')
+const selectBtn = document.getElementById('button');
+const originalCells = document.getElementsByClassName('originalStyle');
+const cellsChangedToBlack = document.getElementsByClassName('changedToBlack')
+
+function makeGrid(cols) {
+    cols = 16;
+    gridDivs.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+    for (i=0; i < (cols * cols); i++) {
+        let e = document.createElement('div');
+        e.classList.add('originalStyle');
+        for (const element of originalCells) {
+            element.addEventListener('mouseover', _changeToBlack)
+        };
+        gridDivs.appendChild(e);
+    }};
+
+function _changeToBlack() {
+    this.classList.add('changedToBlack');
+};
 
 
-
-
-var createGridFunction = (function () { 
-     x = gridSize;
-    for (let i=0; i < x; i++) {
-        
-        var creatingElement = document.createElement('div')
-        creatingElement.classList.add('descendant');
-        selectGrid.appendChild(creatingElement);
-    }
-}());
-
-
-//let elements = document.querySelector('div');
-let elements = document.getElementsByClassName('descendant');
-
-var changeElementToBlackFunction = (function () {
-    for (let i=0; i < elements.length; i++) {
-        elements[i].addEventListener('mouseover', function(e)  {
-        this.classList.add('changedDescendant');
-        }
-        )};
-}());
+selectBtn.addEventListener('click', () => {
+    let changed = document.getElementsByClassName('originalStyle');
+    for(let elem of changed) {
+        elem.classList.remove('changedToBlack');
+    }});
     
-var btnClear = selectBtn.addEventListener('click', function(e) {
-    var x = document.getElementsByClassName('changedDescendant');
-    while (x.length)
-        x[0].classList.remove('changedDescendant')
-});
     
 
 
-
-
+makeGrid();
