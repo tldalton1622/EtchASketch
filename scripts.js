@@ -3,6 +3,12 @@ const selectBtn = document.getElementById('button');
 const originalCells = document.getElementsByClassName('originalStyle');
 const cellsChangedToBlack = document.getElementsByClassName('changedToBlack')
 
+selectBtn.addEventListener('click', () => {
+    let changed = document.getElementsByClassName('originalStyle');
+    for(let elem of changed) {
+        elem.classList.remove('changedToBlack');
+    }});
+
 function makeGrid(cols) {
     cols = 16;
     gridDivs.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
@@ -20,12 +26,7 @@ function _changeToBlack() {
 };
 
 
-selectBtn.addEventListener('click', () => {
-    let changed = document.getElementsByClassName('originalStyle');
-    for(let elem of changed) {
-        elem.classList.remove('changedToBlack');
-    }});
-    
+
     
 
 
